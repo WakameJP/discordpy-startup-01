@@ -8,6 +8,17 @@ import os
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 
+@client.event
+async def on_ready():
+    await client.change_presence(activity=discord.Game(name=',help | debug mode'))
+
+    # or, for watching:
+    activity = discord.Activity(name=',help | debug mode', type=discord.ActivityType.watching)
+    await client.change_presence(activity=activity)
+
+    channel = client.get_channel(680727914614095903)
+    await channel.send('>>> **Normal Bot**が起動しました。')
+
 
 @client.event
 async def on_message(message):
