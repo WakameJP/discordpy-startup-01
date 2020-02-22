@@ -8,6 +8,8 @@ import os
 client = discord.Client()
 token = os.environ['DISCORD_BOT_TOKEN']
 
+await client.change_presence(activity=discord.Game(name=',help |byWakameJP'))
+
 @client.event
 async def on_message(message):
 
