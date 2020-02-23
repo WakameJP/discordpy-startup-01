@@ -10,10 +10,10 @@ token = os.environ['DISCORD_BOT_TOKEN']
 
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name=',help | debug mode'))
+    await client.change_presence(activity=discord.Game(name=',help | v1.0β'))
 
     # or, for watching:
-    activity = discord.Activity(name=',help | debug mode', type=discord.ActivityType.watching)
+    activity = discord.Activity(name=',help | v1.0β', type=discord.ActivityType.playing)
     await client.change_presence(activity=activity)
 
     channel = client.get_channel(680727914614095903)
